@@ -20,6 +20,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/login', (req, res) => {
+    console.log(req)
     sess = req.session;
     sess.email = req.body.email;
     res.end('done');
@@ -48,6 +49,6 @@ router.get('/logout', (req, res) => {
 
 app.use('/', router);
 
-app.listen(process.env.PORT || 3001, () => {
-    console.log(`App Started on PORT ${process.env.PORT || 3000}`);
+app.listen(process.env.PORT || 8000, () => {
+    console.log(`App Started on PORT ${process.env.PORT || 8000}`);
 });
